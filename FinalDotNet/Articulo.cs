@@ -13,7 +13,7 @@ namespace FinalDotNet
         public string Descripcion { get; set; }
         public string Marca { get; set; }
         public string Categoria { get; set; }
-        public string Imagen { get; set; }
+        public string ImagenUrl { get; set; }
         public int Precio { get; set; }
 
     }
