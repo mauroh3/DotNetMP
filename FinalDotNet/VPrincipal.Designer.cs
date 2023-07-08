@@ -32,7 +32,9 @@ namespace FinalDotNet
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ListaCompleta = new System.Windows.Forms.Button();
             this.DgbArticulos = new System.Windows.Forms.DataGridView();
+            this.pictureBoxArticulo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgbArticulos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // ListaCompleta
@@ -56,11 +58,19 @@ namespace FinalDotNet
             this.DgbArticulos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgbArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.DgbArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgbArticulos.Location = new System.Drawing.Point(83, 97);
+            this.DgbArticulos.Location = new System.Drawing.Point(42, 59);
             this.DgbArticulos.Name = "DgbArticulos";
-            this.DgbArticulos.Size = new System.Drawing.Size(886, 392);
+            this.DgbArticulos.Size = new System.Drawing.Size(894, 162);
             this.DgbArticulos.TabIndex = 1;
-            this.DgbArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgbArticulos_CellContentClick);
+            this.DgbArticulos.SelectionChanged += new System.EventHandler(this.DgbArticulos_SelectionChanged);
+            // 
+            // pictureBoxArticulo
+            // 
+            this.pictureBoxArticulo.Location = new System.Drawing.Point(976, 22);
+            this.pictureBoxArticulo.Name = "pictureBoxArticulo";
+            this.pictureBoxArticulo.Size = new System.Drawing.Size(224, 382);
+            this.pictureBoxArticulo.TabIndex = 2;
+            this.pictureBoxArticulo.TabStop = false;
             // 
             // VPrincipal
             // 
@@ -69,7 +79,8 @@ namespace FinalDotNet
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1102, 686);
+            this.ClientSize = new System.Drawing.Size(1220, 428);
+            this.Controls.Add(this.pictureBoxArticulo);
             this.Controls.Add(this.DgbArticulos);
             this.Controls.Add(this.ListaCompleta);
             this.Name = "VPrincipal";
@@ -77,6 +88,7 @@ namespace FinalDotNet
             this.Text = "VPrincipal";
             this.Load += new System.EventHandler(this.VPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgbArticulos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -85,5 +97,6 @@ namespace FinalDotNet
 
         private System.Windows.Forms.Button ListaCompleta;
         private System.Windows.Forms.DataGridView DgbArticulos;
+        private System.Windows.Forms.PictureBox pictureBoxArticulo;
     }
 }

@@ -12,20 +12,41 @@ namespace FinalDotNet
 {
     public partial class VPrincipal : Form
     {
+        private List<Articulo> listaArticulos;
         public VPrincipal()
         {
             InitializeComponent();
         }
 
-        private void DgbArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
         private void VPrincipal_Load(object sender, EventArgs e)
         {
             ArticulosNegocio negocio = new ArticulosNegocio();
-            DgbArticulos.DataSource = negocio.listar();
+            listaArticulos = negocio.listar();
+            DgbArticulos.DataSource = listaArticulos;
+            cargarImagen(listaArticulos[0].ImagenUrl);
 
+        }
+
+        private void DgbArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+
+            Articulo seleccionado = (Articulo)DgbArticulos.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.ImagenUrl);
+        }
+
+        private void cargarImagen(string imagen) 
+        {
+            try
+            {
+
+                pictureBoxArticulo.Load(imagen);
+
+            }
+            catch (Exception ex)
+            {
+
+                pictureBoxArticulo.Load("https://media.tenor.com/PXOXwsJKbSYAAAAM/where-you.gif");
+            }
         }
     }
 }
