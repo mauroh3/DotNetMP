@@ -23,6 +23,7 @@ namespace FinalDotNet
             ArticulosNegocio negocio = new ArticulosNegocio();
             listaArticulos = negocio.listar();
             DgbArticulos.DataSource = listaArticulos;
+            DgbArticulos.Columns["ImagenUrl"].Visible = false;
             cargarImagen(listaArticulos[0].ImagenUrl);
 
         }

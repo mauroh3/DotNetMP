@@ -20,8 +20,7 @@ namespace FinalDotNet
             {
                 conexion.ConnectionString="Data Source=.\\SQLEXPRESS02; Initial Catalog=CATALOGO_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select Codigo, Nombre, Descripcion, ImagenUrl, Precio from ARTICULOS";
-                //comando.CommandText = "select Descripcion as Marca from MARCAS";
+                comando.CommandText = "select Codigo, M.Descripcion AS Marca, Nombre, A.Descripcion AS Descripcion, ImagenUrl, Precio, C.Descripcion, c.Descripcion as Categoria from ARTICULOS A, MARCAS M, CATEGORIAS C where IdMarca = M.Id and IdCategoria = C.Id";
                 //comando.CommandText = "select Descripcion as Categoria from CATEGORIAS";
                 comando.Connection = conexion;
 
@@ -34,10 +33,10 @@ namespace FinalDotNet
                     aux.Codigo = (string)lector["Codigo"];
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
+                    aux.Marca = (string)lector["Marca"];
+                    aux.Categoria = (string)lector["Categoria"];
                     aux.ImagenUrl = (string)lector["ImagenUrl"];
                     aux.Precio = Convert.ToInt32(lector["Precio"]);
-                    //aux.Marca = (string)lector["Marca"];
-                    //aux.Categoria = (string)lector["Categoria"];
                     lista.Add(aux);
                 }
                 conexion.Close();
