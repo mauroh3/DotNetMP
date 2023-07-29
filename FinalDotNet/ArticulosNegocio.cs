@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Dominio;
 
 namespace FinalDotNet
 {
@@ -21,7 +22,6 @@ namespace FinalDotNet
                 conexion.ConnectionString="Data Source=.\\SQLEXPRESS02; Initial Catalog=CATALOGO_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "select Codigo, M.Descripcion AS Marca, Nombre, A.Descripcion AS Descripcion, ImagenUrl, Precio, C.Descripcion, c.Descripcion as Categoria from ARTICULOS A, MARCAS M, CATEGORIAS C where IdMarca = M.Id and IdCategoria = C.Id";
-                //comando.CommandText = "select Descripcion as Categoria from CATEGORIAS";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -34,7 +34,8 @@ namespace FinalDotNet
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
                     aux.Marca = (string)lector["Marca"];
-                    aux.Categoria = (string)lector["Categoria"];
+                    aux.Categoria = new Categorias ();
+                    aux.Categoria.Descripcion = (string) lector["Categoria"];//tengo que sobrescribir una propiedad heredada de clase para transformar de objeto a string de categoria celular etc
                     aux.ImagenUrl = (string)lector["ImagenUrl"];
                     aux.Precio = Convert.ToInt32(lector["Precio"]);
                     lista.Add(aux);
