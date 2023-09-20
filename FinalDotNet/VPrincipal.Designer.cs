@@ -33,7 +33,6 @@ namespace FinalDotNet
             this.agregarArticulo = new System.Windows.Forms.Button();
             this.DgbArticulos = new System.Windows.Forms.DataGridView();
             this.pictureBoxArticulo = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgbArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -76,14 +75,6 @@ namespace FinalDotNet
             this.pictureBoxArticulo.TabIndex = 2;
             this.pictureBoxArticulo.TabStop = false;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(0, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
-            // 
             // VPrincipal
             // 
             this.AccessibleDescription = "";
@@ -92,7 +83,6 @@ namespace FinalDotNet
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1220, 428);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBoxArticulo);
             this.Controls.Add(this.DgbArticulos);
             this.Controls.Add(this.agregarArticulo);
@@ -111,6 +101,5 @@ namespace FinalDotNet
         private System.Windows.Forms.Button agregarArticulo;
         private System.Windows.Forms.DataGridView DgbArticulos;
         private System.Windows.Forms.PictureBox pictureBoxArticulo;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
