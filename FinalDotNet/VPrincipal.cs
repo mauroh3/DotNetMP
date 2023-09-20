@@ -51,5 +51,11 @@ namespace FinalDotNet
                 pictureBoxArticulo.Load("https://media.tenor.com/PXOXwsJKbSYAAAAM/where-you.gif");
             }
         }
+
+        private void ListaCompleta_Click(object sender, EventArgs e)
+        {
+            wAltaArticulo alta = new wAltaArticulo();
+            alta.ShowDialog();
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Dominio;
+using System.Linq.Expressions;
 
 namespace Negocio
 {
@@ -41,6 +42,23 @@ namespace Negocio
                 throw ex;
             }
             finally { datos.cerrarConexion(); }
+        }
+        public void agregar (Articulo nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("INSERT INTO ARTICULOS (Nombre, Descripcion, Precio) VALUES ('" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', '" + nuevo.Precio + "')");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally 
+            {
+                datos.cerrarConexion(); 
+            };    
         }
     }
 }

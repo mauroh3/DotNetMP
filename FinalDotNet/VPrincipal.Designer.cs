@@ -30,21 +30,25 @@ namespace FinalDotNet
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.ListaCompleta = new System.Windows.Forms.Button();
+            this.agregarArticulo = new System.Windows.Forms.Button();
             this.DgbArticulos = new System.Windows.Forms.DataGridView();
             this.pictureBoxArticulo = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgbArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
-            // ListaCompleta
+            // agregarArticulo
             // 
-            this.ListaCompleta.Location = new System.Drawing.Point(12, 12);
-            this.ListaCompleta.Name = "ListaCompleta";
-            this.ListaCompleta.Size = new System.Drawing.Size(130, 27);
-            this.ListaCompleta.TabIndex = 0;
-            this.ListaCompleta.Text = "Lista de productos";
-            this.ListaCompleta.UseVisualStyleBackColor = true;
+            this.agregarArticulo.AccessibleName = "btnAgregar";
+            this.agregarArticulo.Location = new System.Drawing.Point(12, 353);
+            this.agregarArticulo.Name = "agregarArticulo";
+            this.agregarArticulo.Size = new System.Drawing.Size(130, 27);
+            this.agregarArticulo.TabIndex = 0;
+            this.agregarArticulo.Tag = "btnAgregar";
+            this.agregarArticulo.Text = "Agregar Articulo";
+            this.agregarArticulo.UseVisualStyleBackColor = true;
+            this.agregarArticulo.Click += new System.EventHandler(this.ListaCompleta_Click);
             // 
             // DgbArticulos
             // 
@@ -58,9 +62,9 @@ namespace FinalDotNet
             this.DgbArticulos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgbArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.DgbArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgbArticulos.Location = new System.Drawing.Point(42, 59);
+            this.DgbArticulos.Location = new System.Drawing.Point(12, 22);
             this.DgbArticulos.Name = "DgbArticulos";
-            this.DgbArticulos.Size = new System.Drawing.Size(573, 162);
+            this.DgbArticulos.Size = new System.Drawing.Size(573, 325);
             this.DgbArticulos.TabIndex = 1;
             this.DgbArticulos.SelectionChanged += new System.EventHandler(this.DgbArticulos_SelectionChanged);
             // 
@@ -72,6 +76,14 @@ namespace FinalDotNet
             this.pictureBoxArticulo.TabIndex = 2;
             this.pictureBoxArticulo.TabStop = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(0, 0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 3;
+            // 
             // VPrincipal
             // 
             this.AccessibleDescription = "";
@@ -80,9 +92,10 @@ namespace FinalDotNet
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1220, 428);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBoxArticulo);
             this.Controls.Add(this.DgbArticulos);
-            this.Controls.Add(this.ListaCompleta);
+            this.Controls.Add(this.agregarArticulo);
             this.Name = "VPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VPrincipal";
@@ -95,8 +108,9 @@ namespace FinalDotNet
 
         #endregion
 
-        private System.Windows.Forms.Button ListaCompleta;
+        private System.Windows.Forms.Button agregarArticulo;
         private System.Windows.Forms.DataGridView DgbArticulos;
         private System.Windows.Forms.PictureBox pictureBoxArticulo;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
