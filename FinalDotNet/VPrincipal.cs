@@ -20,14 +20,18 @@ namespace FinalDotNet
             InitializeComponent();
         }
 
-        private void VPrincipal_Load(object sender, EventArgs e)
+        private void cargar()
         {
             ArticulosNegocio negocio = new ArticulosNegocio();
             listaArticulos = negocio.listar();
             DgbArticulos.DataSource = listaArticulos;
             DgbArticulos.Columns["ImagenUrl"].Visible = false;
             cargarImagen(listaArticulos[0].ImagenUrl);
+        }
 
+        private void VPrincipal_Load(object sender, EventArgs e)
+        {
+            cargar();
         }
 
         private void DgbArticulos_SelectionChanged(object sender, EventArgs e)
@@ -56,6 +60,7 @@ namespace FinalDotNet
         {
             wAltaArticulo alta = new wAltaArticulo();
             alta.ShowDialog();
+            cargar();
         }
     }
 }

@@ -37,8 +37,6 @@ namespace FinalDotNet
             try
             {
                 art.Codigo = textCódico.Text;
-                //art.Categoria = textCategoría.Text;
-                art.Marca = textMarca.Text;
                 art.Nombre = textNombre.Text;
                 art.Descripcion = textDescripción.Text;
                 art.Precio = int.Parse(textPrecio.Text);
@@ -52,19 +50,15 @@ namespace FinalDotNet
                 MessageBox.Show(ex.ToString());
             }
         }
-
-        private void Categorias_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void wAltaArticulo_Load(object sender, EventArgs e)
         {
             CategoriasNegocio Categoria = new CategoriasNegocio();
+            MarcasNegocio Marca = new MarcasNegocio();
 
             try
             {
                 cboCategoria.DataSource = Categoria.listar();
+                cboMarcas.DataSource = Marca.listar();
             }
             catch (Exception ex)
             {

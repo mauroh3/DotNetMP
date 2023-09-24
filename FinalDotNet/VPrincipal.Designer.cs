@@ -40,7 +40,7 @@ namespace FinalDotNet
             // agregarArticulo
             // 
             this.agregarArticulo.AccessibleName = "btnAgregar";
-            this.agregarArticulo.Location = new System.Drawing.Point(12, 353);
+            this.agregarArticulo.Location = new System.Drawing.Point(271, 684);
             this.agregarArticulo.Name = "agregarArticulo";
             this.agregarArticulo.Size = new System.Drawing.Size(130, 27);
             this.agregarArticulo.TabIndex = 0;
@@ -57,21 +57,26 @@ namespace FinalDotNet
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgbArticulos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DgbArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            this.DgbArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DgbArticulos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgbArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.DgbArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgbArticulos.Location = new System.Drawing.Point(12, 22);
+            this.DgbArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.DgbArticulos.Location = new System.Drawing.Point(12, 465);
+            this.DgbArticulos.MultiSelect = false;
             this.DgbArticulos.Name = "DgbArticulos";
-            this.DgbArticulos.Size = new System.Drawing.Size(573, 325);
+            this.DgbArticulos.RowHeadersWidth = 43;
+            this.DgbArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgbArticulos.Size = new System.Drawing.Size(702, 213);
             this.DgbArticulos.TabIndex = 1;
             this.DgbArticulos.SelectionChanged += new System.EventHandler(this.DgbArticulos_SelectionChanged);
             // 
             // pictureBoxArticulo
             // 
-            this.pictureBoxArticulo.Location = new System.Drawing.Point(694, 12);
+            this.pictureBoxArticulo.Location = new System.Drawing.Point(12, 2);
             this.pictureBoxArticulo.Name = "pictureBoxArticulo";
-            this.pictureBoxArticulo.Size = new System.Drawing.Size(460, 404);
+            this.pictureBoxArticulo.Size = new System.Drawing.Size(702, 446);
+            this.pictureBoxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxArticulo.TabIndex = 2;
             this.pictureBoxArticulo.TabStop = false;
             // 
@@ -82,7 +87,7 @@ namespace FinalDotNet
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1220, 428);
+            this.ClientSize = new System.Drawing.Size(725, 716);
             this.Controls.Add(this.pictureBoxArticulo);
             this.Controls.Add(this.DgbArticulos);
             this.Controls.Add(this.agregarArticulo);

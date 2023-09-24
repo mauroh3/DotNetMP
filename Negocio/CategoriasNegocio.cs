@@ -22,7 +22,7 @@ namespace Negocio
                 while (datos.Lector.Read())
                 {
                     Categorias aux = new Categorias ();
-                    aux.Descripcion = (string )datos.Lector["CATEGORIA"];
+                    aux.Descripcion = (string) datos.Lector["CATEGORIA"];
                     lista.Add(aux);
                 }
                 return lista;

@@ -34,14 +34,15 @@
             this.Descripción = new System.Windows.Forms.Label();
             this.Marca = new System.Windows.Forms.Label();
             this.Precio = new System.Windows.Forms.Label();
-            this.textCódico = new System.Windows.Forms.TextBox();
-            this.textMarca = new System.Windows.Forms.TextBox();
             this.textNombre = new System.Windows.Forms.TextBox();
             this.textDescripción = new System.Windows.Forms.TextBox();
             this.textPrecio = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
+            this.textCódico = new System.Windows.Forms.NumericUpDown();
+            this.cboMarcas = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.textCódico)).BeginInit();
             this.SuspendLayout();
             // 
             // Código
@@ -99,20 +100,6 @@
             this.Precio.TabIndex = 5;
             this.Precio.Text = "Precio";
             // 
-            // textCódico
-            // 
-            this.textCódico.Location = new System.Drawing.Point(154, 120);
-            this.textCódico.Name = "textCódico";
-            this.textCódico.Size = new System.Drawing.Size(121, 20);
-            this.textCódico.TabIndex = 6;
-            // 
-            // textMarca
-            // 
-            this.textMarca.Location = new System.Drawing.Point(154, 182);
-            this.textMarca.Name = "textMarca";
-            this.textMarca.Size = new System.Drawing.Size(121, 20);
-            this.textMarca.TabIndex = 8;
-            // 
             // textNombre
             // 
             this.textNombre.Location = new System.Drawing.Point(154, 213);
@@ -163,7 +150,39 @@
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(121, 21);
             this.cboCategoria.TabIndex = 14;
-            this.cboCategoria.SelectedIndexChanged += new System.EventHandler(this.Categorias_SelectedIndexChanged);
+            // 
+            // textCódico
+            // 
+            this.textCódico.Location = new System.Drawing.Point(154, 128);
+            this.textCódico.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.textCódico.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.textCódico.Name = "textCódico";
+            this.textCódico.ReadOnly = true;
+            this.textCódico.Size = new System.Drawing.Size(121, 20);
+            this.textCódico.TabIndex = 15;
+            this.textCódico.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // cboMarcas
+            // 
+            this.cboMarcas.AccessibleName = "cboCategoria";
+            this.cboMarcas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMarcas.FormattingEnabled = true;
+            this.cboMarcas.Location = new System.Drawing.Point(154, 182);
+            this.cboMarcas.Name = "cboMarcas";
+            this.cboMarcas.Size = new System.Drawing.Size(121, 21);
+            this.cboMarcas.TabIndex = 16;
             // 
             // wAltaArticulo
             // 
@@ -171,14 +190,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 503);
+            this.Controls.Add(this.cboMarcas);
+            this.Controls.Add(this.textCódico);
             this.Controls.Add(this.cboCategoria);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.textPrecio);
             this.Controls.Add(this.textDescripción);
             this.Controls.Add(this.textNombre);
-            this.Controls.Add(this.textMarca);
-            this.Controls.Add(this.textCódico);
             this.Controls.Add(this.Precio);
             this.Controls.Add(this.Marca);
             this.Controls.Add(this.Descripción);
@@ -189,6 +208,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Articulo";
             this.Load += new System.EventHandler(this.wAltaArticulo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.textCódico)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,13 +222,13 @@
         private System.Windows.Forms.Label Descripción;
         private System.Windows.Forms.Label Marca;
         private System.Windows.Forms.Label Precio;
-        private System.Windows.Forms.TextBox textCódico;
-        private System.Windows.Forms.TextBox textMarca;
         private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.TextBox textDescripción;
         private System.Windows.Forms.TextBox textPrecio;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cboCategoria;
+        private System.Windows.Forms.NumericUpDown textCódico;
+        private System.Windows.Forms.ComboBox cboMarcas;
     }
 }
